@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Fontis SecurePay Extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you are unable to obtain it through the world-wide-web, please send
+ * an email to license@magentocommerce.com so you can be sent a copy.
+ *
+ * @category   Fontis
+ * @package    Fontis_SecurePay
+ * @author     Chris Norton
+ * @copyright  Copyright (c) 2013 Fontis Pty. Ltd. (http://www.fontis.com.au)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Fontis_SecurePay>
+            <version>1.1.0</version>
+            <depends>
+                <Mage_Payment />
+            </depends>
+        </Fontis_SecurePay>
+    </modules>
+    <global>
+    	<models>
+    		<securePay>
+	    		<class>Fontis_SecurePay_Model</class>
+	    	</securePay>
+    	</models>
+    	<helpers>
+    		<securePay>
+    			<class>Fontis_SecurePay_Helper</class>
+    		</securePay>
+    	</helpers>
+        <resources>
+            <securePay_setup>
+                <setup>
+                    <module>Fontis_SecurePay</module>
+                </setup>
+                <connection>
+                    <use>directory_setup</use>
+                </connection>
+            </securePay_setup>
+            <securePay_write>
+                <connection>
+                    <use>local_write</use>
+                </connection>
+            </securePay_write>
+            <securePay_read>
+                <connection>
+                    <use>local_read</use>
+                </connection>
+            </securePay_read>
+        </resources>
+    </global>
+	<default>
+        <payment>
+            <secureXml>
+            	<active>0</active>
+            	<model>securePay/secureXml</model>
+            	<username>TestUsername</username>
+            	<password>TestPassword</password>
+            	<title>SecurePay</title>
+            	<allowspecific>0</allowspecific>
+            	<debug>0</debug>
+            	<test>1</test>
+            	<cctypes>AE,VI,MC,DI</cctypes>
+            	<payment_action>authorize_capture</payment_action>
+            </secureXml>
+        </payment>
+    </default>
+</config>
