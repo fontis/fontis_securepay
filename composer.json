@@ -1,0 +1,9 @@
+{
+    "name":"fontis/securepay",
+    "type":"magento-module",
+    "license":"OSL-3.0",
+    "description":"Payments made with this payment module are processed through the SecureXML gateway.",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
